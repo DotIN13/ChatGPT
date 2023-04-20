@@ -28,6 +28,6 @@ app.post("/v1/completions", completions);
 app.post("/v1/chat/completions", chatCompletions);
 
 // Start server
-app.listen(SERVER_PORT, () => {
+app.listen(SERVER_PORT, "127.0.0.1", () => {
     console.log(`Listening on ${SERVER_PORT} ...`);
 });

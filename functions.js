@@ -38,8 +38,9 @@ function generateId() {
     return id;
 }
 
-function getOpenAIKey() {
-    return OPENAI_KEYS[Math.floor(Math.random() * OPENAI_KEYS.length)];
+function getOpenAIKey(req) {
+    // return OPENAI_KEYS[Math.floor(Math.random() * OPENAI_KEYS.length)];
+    return req.header("Authorization").slice(7)
 }
 
 export { generateId, getOpenAIKey, streamCompletion }

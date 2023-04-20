@@ -5,7 +5,7 @@ import { DEBUG, MODERATION } from "./config.js";
 
 async function completions(req, res) {
     let orgId = generateId();
-    let key = getOpenAIKey();
+    let key = getOpenAIKey(req);
 
     if (!req.body.prompt) {
         res.set("Content-Type", "application/json");
@@ -133,7 +133,7 @@ async function completions(req, res) {
 
 async function chatCompletions(req, res) {
     let orgId = generateId();
-    let key = getOpenAIKey();
+    let key = getOpenAIKey(req);
 
     if (MODERATION) {
         try {
